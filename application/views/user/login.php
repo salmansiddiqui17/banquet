@@ -7,15 +7,15 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/backend/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/backend/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/backend/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/backend/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/backend/plugins/iCheck/square/blue.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?= base_url(); ?>"><b>Sports</b>Club</a>
+    <a href="<?= base_url(); ?>"><img src="../assets/backend/dist/img/logo_small.png" alt="Logo"></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -67,11 +67,11 @@
 <!-- /.login-box -->
 
 <!-- jQuery 3.1.1 -->
-<script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-3.1.1.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/backend/plugins/jQuery/jquery-3.1.1.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/backend/plugins/iCheck/icheck.min.js"></script>
 <script>
   $(function () {
     $('input').iCheck({
