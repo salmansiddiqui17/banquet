@@ -66,11 +66,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul class="list-right">
 								<li>
 									<span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
-									<a href="mailto:info@example.com">info@minhajbanquets.com</a>
+									<a href="mailto:zahidzaidi57@gmail.com">zahidzaidi57@gmail.com</a>
 								</li>
 								<li>
 									<span class="fa fa-phone list-icon" aria-hidden="true"></span>
-									<p> 111 111 634 </p>
+									<p>0340 0595492 </p>
 								</li>
 							</ul>
 						</div>
@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="banner-info">
 						<h1>
 							<a href="index.html">
-								<img src="<?= base_url(); ?>assets/frontend/images/logo.png" class="img-responsive" alt="" />Minhaj Banquets</a>
+								<img src="<?= base_url(); ?>assets/frontend/images/logo.png" class="img-responsive" alt="" />Banquet Management System</a>
 						</h1>
 						<h2>Your Hub for Banquets!</h2>
 
@@ -117,9 +117,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<img src="<?= base_url(); ?>assets/frontend/images/about.jpg" class="img-responsive" alt="" />
 				</div>
 				<div class="col-md-6 banner-btm-g2">
-					<h3 class="title-main">Welcome to Mnhnaj Banquets </h3>
+					<h3 class="title-main">Welcome to Banquet Management System </h3>
 					<h4 class="sub-title">The wedding of your dreams comes real</h4>
-					<p>Minhaj banquets is serving the its customers since 2010. Minhaj banquets is known for its Quality Service. It has banquets with delious foods and very beautiful arragements that leaves the guests amazed.
+					<p>Banquet Management System is serving the its customers since 2010. It is known for its Quality Service. It has banquets with delious foods and very beautiful arragements that leaves the guests amazed.
 
 					</p>
 					<!-- <div class="find-about">
@@ -135,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-6 about-right about-right-flex">
 				<div class="about-bottom-text">
 					<h4 class="title1">Our story </h4>
-					<p class="text">Minhaj banquets is serving the its customers since 2010. Minhaj banquets is known for its Quality Service</p>
+					<p class="text">Banquet Management System is serving the its customers since 2010. It is known for its Quality Service</p>
 				</div>
 				<div class="about-bottom-grid about-img1">
 				</div>
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="about-bottom-text ab1">
 					<h4 class="title1">Delicious food </h4>
-					<p class="text">Minhaj banquets has a very good food quality and very delious food prepared by professional chefs</p>
+					<p class="text">Banquet Management System has a very good food quality and very delious food prepared by professional chefs</p>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -273,10 +273,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- slid -->
 	<div class="slid">
 		<div class="slid-text">
-			<h4>Your Imafinations, Our Service.</h4>
-			<p>Proin tincidunt sodales faucibus. Curabitur ut metus sed urna dignissim sodales ac a tellus. Sed varius justo tellus,
-				at convallis libero cursus non. In malesuada accumsan felis, a imperdiet arcu blandit sed. Ut id faucibus eros. Fusce
-				sed vulputate dui, non consectetur felis. Etiam id enim sem. Suspendisse commodo tempor magna </p>
+			<h4>Your Imaginations, Our Service.</h4>
+			<p>We welcome you to our newest addition in the Banuqet Managment. Banquet management system strive to strike the fine balance between excellence, perfection, grandeur and beauty. Our team here is dedicated to making your events our top priority, providing our guests with a truly unforgettable experience. In that, we hope, we exceed your expectations. It is our utmost pleasure to have you here and we hope to keep you coming back again. </p>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -290,21 +288,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="col-md-6 contact-right">
 			<h3 class="title-contact">get in touch</h3>
-			<form action="#" method="post">
+			<form action="<?= base_url() ?>site/getInTouch" method="post">
 				<div class="contact-input">
-					<input type="text" class="name" name="name" placeholder="First Name" required="">
+					<input type="text" class="name" name="first_name" placeholder="First Name" required="">
 				</div>	
 				<div class="contact-input">
-					<input type="text" class="name" name="name" placeholder="Last Name" required="">
+					<input type="text" class="name" name="last_name" placeholder="Last Name" required="">
 				</div>	
 				<div class="contact-input">
-					<input type="email" class="name" name="name" placeholder="Email" required="">
+					<input type="email" class="name" name="email" placeholder="Email" required="">
 				</div>
 				<div class="contact-input">
-					<input type="text" class="name" name="name" placeholder="Subject" required="">
+					<input type="text" class="name" name="subject" placeholder="Subject" required="">
 				</div>	
 				<div class="contact-input">
-					<textarea placeholder="Your Message" required=""></textarea>
+					<textarea placeholder="Your Message" name="message" required=""></textarea>
 				</div>
 					<input type="submit" value="SEND MESSAGE">
 			</form>
@@ -320,11 +318,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<li>
 							<span class="fa fa-envelope-o" aria-hidden="true"></span>
-							<a href="mailto:info@minhajbanquets.com">info@minhajbanquets.com</a>
+							<a href="mailto:zahidzaidi57@gmail.com">zahidzaidi57@gmail.com</a>
 						</li>
 						<li>
 							<span class="fa fa-phone" aria-hidden="true"></span>
-							<p>+1234 567 567</p>
+							<p>0340 0595492</p>
 						</li>
 						<li>
 							<span class="fa fa-map-marker" aria-hidden="true"></span>
@@ -339,7 +337,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="social_banner">
 			<ul class="social_list">
 				<li>
-					<a href="#" class="facebook">
+					<a href="https://www.facebook.com/Banquet-Management-System-111412319654053/" class="facebook">
 						<span class="fa fa-facebook" aria-hidden="true"></span>
 					</a>
 				</li>
@@ -361,7 +359,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</ul>
 		</div>
 		<div class="footer-copy">
-			<p>© 2017 Banuqet Management. All rights reserved </p>
+			<p>© 2017 Banquet Management. All rights reserved </p>
 		</div>
 	</div>
 	<!--//footer-->
