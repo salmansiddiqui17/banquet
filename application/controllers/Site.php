@@ -46,13 +46,12 @@ class Site extends CI_Controller {
 						Thank you.";
 			$this->email->set_newline("\r\n");
 			$this->email->from('Minhaj Banquets'); // change it to yours
-			$this->email->to('salmansidd17@gmail.com');// change it to yours
+			$this->email->to('zahidzaidi57@gmail.com');// change it to yours
 			$this->email->subject('New Banquet Reservation Request');
 			$this->email->message($message);
 			if($this->email->send())
 			{
-				echo 'Email sent.';
-				redirect('/site#reservation');
+				redirect('/site');
 			}
 			else
 			{
