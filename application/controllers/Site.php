@@ -98,7 +98,13 @@ class Site extends CI_Controller {
 		}
 	}
 
-
+	public function ShowArrangements($banq_id='')
+	{
+		if($banq_id!=''){
+			$data['arrangements'] = $this->db->where('banq_id',$banq_id)->where('is_delete',0)->get('hall_arrangements')->result_array();
+			$this->load->view('site/arrangements',$data);
+		}
+	}
 
 
 

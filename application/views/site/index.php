@@ -27,6 +27,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
 	<link href="<?= base_url(); ?>assets/frontend/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<style>
+    a[href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website_minhajbanqe&utm_content=footer_img"] { 
+        display: none !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -176,8 +181,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="row">
 										<?php foreach ($banquets as $key => $value) { ?>
 											<div class="col-md-3">
-												<a href="<?= base_url().$value['img']; ?>" class="thumbnail cm-overlay text-center">
-													<img src="<?= base_url().$value['img']; ?>" alt="Image" style="max-width:100%;">
+												<a href="<?= base_url().$value['img']; ?>" alt="<?= $value['id'] ?>" class="thumbnail cm-overlay text-center">
+													<img src="<?= base_url().$value['img']; ?>" alt="jshdf shdflk" style="max-width:100%;">
 													<span ><?= $value['name'] ?></span>
 												</a>
 											</div>
@@ -472,3 +477,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 
 </html>
+
+<script>
+	$(function(){
+		setInterval(function(){
+			var content = $('.cm-content');	
+			if(content!=undefined){
+				var id = content.find('img').attr('alt');
+				console.log(content.find('div').length);
+				if(content.find('div').length==0){
+					// console.log("if");
+					var html = "<div class='text-center' style='padding:10px 20px;background-color:#232323;'><a href='<?= base_url(); ?>site/ShowArrangements/"+id+"' style='color:#fff;' >Show Arrangements</a></div>";
+					content.append(html);
+				}else{
+					// console.log("else");
+					var href = "<?= base_url(); ?>site/ShowArrangements/"+id;
+					content.find('a').attr('href',href);
+				}
+			}
+		},500);
+	});
+</script>
