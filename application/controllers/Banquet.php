@@ -170,6 +170,7 @@ class Banquet extends CI_Controller {
     public function save_arrangements()
     {
         $banq_id = $this->input->post('banq_id');
+        $description = $this->input->post('description');
         $filesCount = count($_FILES['imgs']['name']);
         
         for($i = 0; $i < $filesCount; $i++){
@@ -183,6 +184,7 @@ class Banquet extends CI_Controller {
             if($img){
                 $imgs[$i]['img'] = $img;
                 $imgs[$i]['banq_id'] = $banq_id;
+                $imgs[$i]['description'] = $description;
             }
         }
 

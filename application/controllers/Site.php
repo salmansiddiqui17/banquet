@@ -46,12 +46,14 @@ class Site extends CI_Controller {
 						Thank you.";
 			$this->email->set_newline("\r\n");
 			$this->email->from('Banquet Management System'); // change it to yours
-			$this->email->to('zahidzaidi57@gmail.com');// change it to yours
+			// $this->email->to('zahidzaidi57@gmail.com');// change it to yours
+			$this->email->to('salmansidd17@gmail.com');// change it to yours
 			$this->email->subject('New Banquet Reservation Request');
 			$this->email->message($message);
 			if($this->email->send())
 			{
-				redirect('/site');
+				echo "success";
+				// redirect('/site');
 			}
 			else
 			{
@@ -79,17 +81,19 @@ class Site extends CI_Controller {
 			$this->email->initialize($config);
 			  
 			$message = $data['message'];
-			$message .= "\n\nFrom: ".$data['first_name']." ".$data['last_name'].'\n';
-			$message .= "email: ".$data['email'];
+			$message .= "<br>From: ".$data['first_name']." ".$data['last_name'];
+			$message .= "<br>email: ".$data['email'];
 
 			$this->email->set_newline("\r\n");
 			$this->email->from($data['first_name']." ".$data['last_name']); // change it to yours
-			$this->email->to('zahidzaidi57@gmail.com');// change it to yours
+			// $this->email->to('zahidzaidi57@gmail.com');// change it to yours
+			$this->email->to('salmansidd17@gmail.com');// change it to yours
 			$this->email->subject($data['subject']);
 			$this->email->message($message);
 			if($this->email->send())
 			{
-				redirect('/site');
+				echo "success";
+				// redirect('/site');
 			}
 			else
 			{

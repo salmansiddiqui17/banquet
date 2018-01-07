@@ -18,6 +18,7 @@
                         <tr>
                           <th>#</th>
                           <th>Image</th>
+                          <th>Description</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
@@ -27,6 +28,7 @@
                         <tr>
                           <td><?php echo $i++; ?></td>
                           <td><img src="<?= base_url().$value['img']; ?>" height="100" alt="image"></td>
+                          <td><?= $value['description'] ?></td>
                           <td>
                             <a href="<?php echo $base_url; ?>banquet/delete_arrangements/<?php echo $value['banq_id']."/".$value['id']; ?>"><i class="fa fa-trash"></i></a>
                           </td>

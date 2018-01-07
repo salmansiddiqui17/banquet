@@ -116,6 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<div class="col-md-3">
 														<a href="<?= base_url().$value['img']; ?>"  class="thumbnail cm-overlay text-center">
 															<img src="<?= base_url().$value['img']; ?>" alt="jshdf shdflk" style="max-width:100%;">
+															<span ><?= $value['description'] ?></span>
 														</a>
 													</div>
 										<?php 	}

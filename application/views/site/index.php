@@ -122,8 +122,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<img src="<?= base_url(); ?>assets/frontend/images/about.jpg" class="img-responsive" alt="" />
 				</div>
 				<div class="col-md-6 banner-btm-g2">
-					<h3 class="title-main">Welcome to Banquet Management System </h3>
-					<h4 class="sub-title">The wedding of your dreams comes real</h4>
+					<h3 class="title-main">About </h3>
+					<h4 class="sub-title">Welcome to Banquet Management System </h4>
 					<p>Banquet Management System is serving the its customers since 2010. It is known for its Quality Service. It has banquets with delious foods and very beautiful arragements that leaves the guests amazed.
 
 					</p>
@@ -162,7 +162,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //testimonials -->
 	<div class="section">
 		<div class="container">
-			<h3 class="w3layouts-title">Taste the best !</h3>
+			<h3 class="w3layouts-title">Banquet Halls !</h3>
 			<div class="about-bottom">
 				<div class="row">
 					<div class="col-md-12">
@@ -186,6 +186,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<span ><?= $value['name'] ?></span>
 												</a>
 											</div>
+											<?php if(($key+1)%4==0): ?>
+													</div>
+												</div>
+												<div class="item">
+													<div class="row">
+											<?php endif ?>
 										<?php } ?>
 									</div>
 									<!--.row-->
@@ -212,7 +218,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				-->
 			<div class="book-left1"></div>
 			<div class="book-right1">
-				<form action="<?= base_url(); ?>site/reservation" method="post" class="book-right2">
+				<form action="<?= base_url(); ?>site/reservation" method="post" id="res" class="book-right2">
 						
 					<div >
 						<label>Full Name :</label>
@@ -292,8 +298,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		</div>
 		<div class="col-md-6 contact-right">
-			<h3 class="title-contact">get in touch</h3>
-			<form action="<?= base_url() ?>site/getInTouch" method="post">
+			<h3 class="title-contact">Contact Us</h3>
+			<form action="<?= base_url() ?>site/getInTouch" method="post" id="cont">
 				<div class="contact-input">
 					<input type="text" class="name" name="first_name" placeholder="First Name" required="">
 				</div>	
@@ -344,21 +350,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li>
 					<a href="https://www.facebook.com/Banquet-Management-System-111412319654053/" class="facebook">
 						<span class="fa fa-facebook" aria-hidden="true"></span>
-					</a>
-				</li>
-				<li>
-					<a href="#" class="twitter">
-						<span class="fa fa-twitter" aria-hidden="true"></span>
-					</a>
-				</li>
-				<li>
-					<a href="#" class="dribble">
-						<span class="fa fa-dribbble" aria-hidden="true"></span>
-					</a>
-				</li>
-				<li>
-					<a href="#" class="vimeo">
-						<span class="fa fa-vimeo" aria-hidden="true"></span>
 					</a>
 				</li>
 			</ul>
@@ -413,7 +404,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<?= base_url(); ?>assets/frontend/js/jquery-ui.js"></script>
 	<script>
 		$(function () {
-			$("#datepicker,#datepicker1").datepicker();
+			$("#datepicker,#datepicker1").datepicker({
+				minDate: new Date(<?= date('Y,m,d') ?>)
+			});
 		});
 	</script>
 	<!-- /End-date-piker -->
@@ -480,11 +473,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script>
 	$(function(){
+		var i=1;
 		setInterval(function(){
 			var content = $('.cm-content');	
 			if(content!=undefined){
 				var id = content.find('img').attr('alt');
-				console.log(content.find('div').length);
+				// console.log(content.find('div').length);
 				if(content.find('div').length==0){
 					// console.log("if");
 					var html = "<div class='text-center' style='padding:10px 20px;background-color:#232323;'><a href='<?= base_url(); ?>site/ShowArrangements/"+id+"' style='color:#fff;' >Show Arrangements</a></div>";
@@ -496,5 +490,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				}
 			}
 		},500);
+
+		setInterval(function(){
+			var banner = $('.agile-banner-main');
+			console.log(i);
+			// banner.css('background',"url('"+"<?= base_url(); ?>"+"assets/frontend/images/b"+i+".jpg') no-repeat 0px 0px !important;");
+			banner.attr("style","background: url('"+"<?= base_url(); ?>"+"assets/frontend/images/b"+i+".jpg') no-repeat 0px 0px;background-size: cover;-webkit-background-size: cove-moz-background-size: cover;-o-background-size: cover;-moz-background-size: cover;position: relative;");
+			i++;
+			if(i>3)
+				i=1;
+		},5000);
+
+		$('#res,#cont').on('submit', function(e) {
+			var postdata = $(this).serializeArray();
+			var formurl = $(this).attr("action");
+			alert("Thank you!\nOur representative will call you soon.");
+			$(this).closest('form').find("input[type=text],input[type=number],input[type=email],select,textarea").val("");
+			$.ajax({
+				url: formurl,
+				type: "POST",
+				data: postdata,
+				success: function(data) {
+					
+				}
+			});
+			e.preventDefault(); //STOP default action
+			e.unbind(); //unbind. to stop multiple form submit.
+    	});
+
 	});
 </script>

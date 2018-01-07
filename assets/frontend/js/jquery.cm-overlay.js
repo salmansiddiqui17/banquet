@@ -229,7 +229,7 @@
             break;
 
             case 38: // up
-            break;
+            return;
 
             case 39: // right
                 $cmNext.trigger('tap');
@@ -237,7 +237,7 @@
             break;
 
             case 40: // down
-            break;
+            return;
 
             default: return; // exit this handler for other keys
         }

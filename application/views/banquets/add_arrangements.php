@@ -18,6 +18,13 @@
                           <input id="img" class="form-control col-md-7 col-xs-12" multiple name="imgs[]" accept="image/*" required="required"  type="file">
                         </div>
                       </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Price/ Description <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="description" class="form-control col-md-7 col-xs-12"  name="description" required="required"  type="text">
+                        </div>
+                      </div>
                       
                       <div class="ln_solid"></div>
                       <div class="form-group">
