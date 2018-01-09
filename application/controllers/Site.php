@@ -46,8 +46,8 @@ class Site extends CI_Controller {
 						Thank you.";
 			$this->email->set_newline("\r\n");
 			$this->email->from('Banquet Management System'); // change it to yours
-			// $this->email->to('zahidzaidi57@gmail.com');// change it to yours
-			$this->email->to('salmansidd17@gmail.com');// change it to yours
+			$this->email->to('zahidzaidi57@gmail.com');// change it to yours
+// 			$this->email->to('salmansidd17@gmail.com');// change it to yours
 			$this->email->subject('New Banquet Reservation Request');
 			$this->email->message($message);
 			if($this->email->send())
@@ -86,8 +86,8 @@ class Site extends CI_Controller {
 
 			$this->email->set_newline("\r\n");
 			$this->email->from($data['first_name']." ".$data['last_name']); // change it to yours
-			// $this->email->to('zahidzaidi57@gmail.com');// change it to yours
-			$this->email->to('salmansidd17@gmail.com');// change it to yours
+			$this->email->to('zahidzaidi57@gmail.com');// change it to yours
+// 			$this->email->to('salmansidd17@gmail.com');// change it to yours
 			$this->email->subject($data['subject']);
 			$this->email->message($message);
 			if($this->email->send())
