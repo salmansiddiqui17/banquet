@@ -251,19 +251,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<label>Time :</label>
 						<select required="" name="time">
 							<option value="">Select Time</option>
-							<option value="10:00">10:00</option>
-							<option value="11:00">11:00</option>
-							<option value="12:00">12:00</option>
-							<option value="13:00">13:00</option>
-							<option value="14:00">14:00</option>
-							<option value="15:00">15:00</option>
-							<option value="16:00">16:00</option>
-							<option value="17:00">17:00</option>
-							<option value="18:00">18:00</option>
-							<option value="19:00">19:00</option>
-							<option value="20:00">20:00</option>
-							<option value="21:00">21:00</option>
-							<option value="22:00">22:00</option>
+							<option value="12:00-04-00">12:00-04-00</option>
+							<option value="06-00-10:00">06-00-10:00</option>
 						</select>
 
 					</div>
@@ -403,9 +392,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" href="<?= base_url(); ?>assets/frontend/css/jquery-ui.css" />
 	<script src="<?= base_url(); ?>assets/frontend/js/jquery-ui.js"></script>
 	<script>
+		var disableddates = <?= $bookings ?>;
+		function DisableSpecificDates(date) {
+		
+			var m = date.getMonth();
+			var d = date.getDate();
+			var y = date.getFullYear();
+			
+			// First convert the date in to the mm-dd-yyyy format 
+			// Take note that we will increment the month count by 1 
+			var currentdate = (m + 1) + '-' + d + '-' + y ;
+			
+			// We will now check if the date belongs to disableddates array 
+			for (var i = 0; i < disableddates.length; i++) {
+			
+				// Now check if the current date is in disabled dates array. 
+				if ($.inArray(currentdate, disableddates) == -1 ) {
+				    return [true, ""];
+				} else {
+					return [false, "", "Unavailable"];
+				}
+			}
+		
+		}
+
 		$(function () {
 			$("#datepicker,#datepicker1").datepicker({
-				minDate: new Date(<?= date('Y,m,d') ?>)
+				minDate: new Date('<?= date('D M d Y H:i:s O') ?>'),
+				beforeShowDay: DisableSpecificDates
 			});
 		});
 	</script>

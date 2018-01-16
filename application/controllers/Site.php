@@ -17,6 +17,11 @@ class Site extends CI_Controller {
 		// $data['page'] = "home/dashboard";
 		// $this->load->view('Template/main', $data);
 		$data['banquets'] = $this->db->where('is_delete',0)->get('banquet')->result_array();
+		$data['bookings'] = array_column($this->db->get('bookings')->result_array(),'booking');
+		foreach ($data['bookings'] as $key => $value) {
+			$data['bookings'][$key] = date('n-j-Y',strtotime($value));
+		}
+		$data['bookings']=json_encode($data['bookings']);
 		$this->load->view('site/index',$data);
 		
 	}
@@ -50,6 +55,7 @@ class Site extends CI_Controller {
 // 			$this->email->to('salmansidd17@gmail.com');// change it to yours
 			$this->email->subject('New Banquet Reservation Request');
 			$this->email->message($message);
+			$this->db->insert('bookings',['booking'=>date('Y-m-d',strtotime($data['date']))]);
 			if($this->email->send())
 			{
 				echo "success";
