@@ -34,6 +34,7 @@
                           <td><?php echo $value['address']; ?></td>
                           <td><?php echo $value['contact_no']; ?></td>
                           <td>
+                            <a href="<?php echo $base_url; ?>banquet/hall_arrangments/<?php echo $value['id']; ?>" title="View Arrangements"><i class="fa fa-eye"></i></a> 
                             <a href="<?php echo $base_url; ?>banquet/edit/<?php echo $value['id']; ?>"><i class="fa fa-edit"></i></a> 
                             <a href="<?php echo $base_url; ?>banquet/delete/<?php echo $value['id']; ?>"><i class="fa fa-trash"></i></a>
                           </td>

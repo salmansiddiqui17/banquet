@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Spicy Bite a Restaurant Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+	<title>Banuquet Management System</title>
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -57,6 +57,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</li>
 								<li>
 									<a class="scroll hvr-underline-from-center" href="#about">About</a>
+								</li>
+								<li>
+									<a class="scroll hvr-underline-from-center" href="#halls">Halls</a>
 								</li>
 								<li>
 									<a class="scroll hvr-underline-from-center" href="#reservation">Reservation</a>
@@ -160,7 +163,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //about -->
 	<!-- //testimonials -->
-	<div class="section">
+	<div class="section" id="halls">
 		<div class="container">
 			<h3 class="w3layouts-title">Banquet Halls !</h3>
 			<div class="about-bottom">
@@ -282,9 +285,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!-- contact -->
 	<div class="contact-bottom" id="contact">
-		<div class="col-md-6  map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27220.32277999271!2d74.31152333609124!3d31.481828211015454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904106691c4c7%3A0xfb24ddaf1e7bc6c2!2sModel+Town%2C+Lahore!5e0!3m2!1sen!2s!4v1511862538545" style="border:0" allowfullscreen></iframe>
-
+		<div class="col-md-6" style="height:493.656px">
+				<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27220.32277999271!2d74.31152333609124!3d31.481828211015454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904106691c4c7%3A0xfb24ddaf1e7bc6c2!2sModel+Town%2C+Lahore!5e0!3m2!1sen!2s!4v1511862538545" style="border:0" allowfullscreen></iframe> -->
+				<div class="map" id="map" style="height:100%;" >
+				
+				</div>
 		</div>
 		<div class="col-md-6 contact-right">
 			<h3 class="title-contact">Contact Us</h3>
@@ -381,6 +386,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<?= base_url(); ?>assets/frontend/js/jquery.tools.min.js"></script>
 	<script src="<?= base_url(); ?>assets/frontend/js/jquery.mobile.custom.min.js"></script>
 	<script src="<?= base_url(); ?>assets/frontend/js/jquery.cm-overlay.js"></script>
+	<script>
+      function initMap() {
+        var myLatLng = {lat: 31.479549, lng: 74.323431};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Banquet Management System'
+        });
+      }
+    </script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1E-LEeewQLiqknQEGGz2bG1g4wWDmWEE&callback=initMap"></script>
+	
+    
+
 
 	<script>
 		$(document).ready(function () {

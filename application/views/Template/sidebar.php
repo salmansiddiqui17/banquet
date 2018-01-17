@@ -32,7 +32,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?= base_url() ?>banquet/view"><i class="fa fa-circle-o"></i> View Banquets</a></li>
-            <li><a href="<?= base_url() ?>banquet/hall_arrangments"><i class="fa fa-circle-o"></i> Banquet Arrangements</a></li>
+            <!-- <li><a href="<?= base_url() ?>banquet/hall_arrangments"><i class="fa fa-circle-o"></i> Banquet Arrangements</a></li> -->
           </ul>
         </li>
       </ul>
