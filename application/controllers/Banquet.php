@@ -193,4 +193,9 @@ class Banquet extends CI_Controller {
         redirect('banquet/view_arrangements/'.$banq_id);
     }
 
+    public function bookings(Type $var = null)
+    {
+        # code...
+    }
+
 }

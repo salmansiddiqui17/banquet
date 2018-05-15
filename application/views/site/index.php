@@ -417,6 +417,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<?= base_url(); ?>assets/frontend/js/jquery-ui.js"></script>
 	<script>
 		var disableddates = <?= $bookings ?>;
+		if($.isEmptyObject(disableddates)){
+			disableddates= <?= date('n-j-Y',strtotime('-1 day')); ?>
+		}
+
 		function DisableSpecificDates(date) {
 		
 			var m = date.getMonth();
@@ -443,7 +447,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		$(function () {
 			$("#datepicker,#datepicker1").datepicker({
 				minDate: new Date('<?= date('D M d Y H:i:s O') ?>'),
-				beforeShowDay: DisableSpecificDates
+				// beforeShowDay: DisableSpecificDates
 			});
 		});
 	</script>
@@ -531,7 +535,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		setInterval(function(){
 			var banner = $('.agile-banner-main');
-			console.log(i);
+			// console.log(i);
 			// banner.css('background',"url('"+"<?= base_url(); ?>"+"assets/frontend/images/b"+i+".jpg') no-repeat 0px 0px !important;");
 			banner.attr("style","background: url('"+"<?= base_url(); ?>"+"assets/frontend/images/b"+i+".jpg') no-repeat 0px 0px;background-size: cover;-webkit-background-size: cove-moz-background-size: cover;-o-background-size: cover;-moz-background-size: cover;position: relative;");
 			i++;
