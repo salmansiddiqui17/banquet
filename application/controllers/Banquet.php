@@ -193,9 +193,18 @@ class Banquet extends CI_Controller {
         redirect('banquet/view_arrangements/'.$banq_id);
     }
 
-    public function bookings(Type $var = null)
+    public function bookings()
     {
-        # code...
+        $data['base_url'] = base_url();
+        $data['userInfo'] = $this->userInfo;
+
+        $this->db->select("*"); 
+        $this->db->from('bookings');
+        $this->db->order_by('id','DESC');
+        $data['bookings'] = $this->db->get()->result_array();
+
+        $data['page']='banquets/bookings';
+        $this->load->view('Template/main',$data);
     }
 
 }

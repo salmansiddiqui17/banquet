@@ -51,8 +51,8 @@ class Site extends CI_Controller {
 						Thank you.";
 			$this->email->set_newline("\r\n");
 			$this->email->from('Banquet Management System'); // change it to yours
-			// $this->email->to('zahidzaidi57@gmail.com');// change it to yours
-			$this->email->to('salmansidd17@gmail.com');// change it to yours
+			$this->email->to('zahidzaidi57@gmail.com');// change it to yours
+			// $this->email->to('salmansidd17@gmail.com');// change it to yours
 			$this->email->subject('New Banquet Reservation Request');
 			$this->email->message($message);
 			$this->db->insert('bookings',['booking'=>date('Y-m-d',strtotime($data['date'])),'message'=>$message]);
